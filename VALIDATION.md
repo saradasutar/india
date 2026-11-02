@@ -1,0 +1,14 @@
+# Starter validation — 2 November 2026
+- JavaScript syntax parsed successfully with Node vm.Script.
+- Browser preview loaded and showed the current Gregorian month.
+- Next-month navigation: November 2026 → December 2026.
+- Back to today restored November 2026.
+- Leap-year date difference: 2024-02-28 → 2024-03-01 returned 2 days.
+- Reversed dates produced a clear validation message.
+- Percentage: 12.5% of 200 returned 25.
+- Search for an unknown term hid all cards and showed a useful empty state; clearing restored cards.
+- Desktop appearance inspected and calendar action styling refined.
+- Print stylesheet supplied; print dialog/output not verified.
+- Responsive breakpoint supplied; real mobile devices and narrow viewport rendering not verified.
+- No full WCAG audit, Lighthouse score or field Core Web Vitals measurement was performed.
+- Odia conversion, festivals, backend/admin operations and installation are not implemented in this starter.
