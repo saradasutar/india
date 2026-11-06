@@ -91,10 +91,94 @@ footer{align-items:center;flex-wrap:wrap}#noticeAdminOpen{border:1px solid #d6e0
 #noticeAdmin input,#noticeAdmin select,#noticeAdmin textarea{background:#fbfcff;border-color:#cfdaea}
 #noticeAdmin .close{font-size:12px}.admin-actions .primary{border-color:#215ddb}
 @media(max-width:760px){.notice-board{margin:12px 16px 0;padding:8px 10px}.notice-label{letter-spacing:0;padding-right:8px}.hero>div{padding:28px 24px}.feature summary{padding:18px;font-size:14px}.feature summary span{display:block;float:none;margin-top:5px}.feature-content{grid-template-columns:1fr;padding:0 20px 20px}#noticeAdmin{padding:22px}}
+
+/* v0.4 — compact editorial dashboard */
+:root{--ink:#1d2e48;--muted:#62738b;--paper:#f6f8fc;--line:#e4eaf3;--teal:#295ec7}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.sidebar{background:#fff;padding:28px 20px;border-right-color:#e9edf4}
+.sidebar .brand{font-size:21px;letter-spacing:-.6px}.brand span{width:36px;height:36px;border-radius:11px;box-shadow:none}
+.side-label{font-size:9px;letter-spacing:1.6px;margin:38px 12px 14px}
+.sidebar nav a{padding:11px 14px;font-size:13px;border:1px solid transparent}
+.sidebar nav a.active{background:#edf3ff;border-color:#dce7fc;color:#265bbc}
+.sidebar-note{background:linear-gradient(140deg,#f4f7fc,#eef4ff);border:1px solid #e7edf6;border-radius:12px}
+header{padding:16px 32px;background:#ffffffed;backdrop-filter:blur(12px)}
+.top-title{font-size:15px;letter-spacing:-.25px}.top-title small{font-size:11px;margin-top:3px}
+.top-meta{font-size:11px}.live-pill{background:#edf7f3;color:#287157;font-size:10px;font-weight:650}
+.notice-board{margin:18px 32px 0;padding:7px 12px;min-height:43px;background:#fff8de;border-color:#f0e5bd;border-radius:10px}
+.notice-label{font-size:10px;letter-spacing:.6px}.notice-track{font-size:13px;font-weight:650}.notice-board button{font-size:11px;min-height:30px;padding:4px 9px;border:0;background:#f8edc4}
+main{padding:24px 32px;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:24px;align-items:start;max-width:1500px}
+.hero{display:contents}
+.hero>div{grid-column:1;grid-row:1;padding:28px 30px;background:radial-gradient(ellipse at top right,#306f9e 0,transparent 65%),linear-gradient(120deg,#16305b,#21468f);border-radius:18px;box-shadow:0 8px 22px #1936640b}
+.hero>div:before{width:180px;height:180px;right:-80px;top:-70px}
+.hero .eyebrow{font-size:9px;letter-spacing:1.7px}
+h1{font-size:clamp(30px,2.7vw,44px);letter-spacing:-1.5px;line-height:1.12;margin:15px 0 12px}
+h1 br{display:none}h1 em{display:block;color:#b2e5de}
+.hero .lead{font-size:13px;line-height:1.7;margin:12px 0;max-width:430px}
+.search{margin-top:20px;padding:4px;box-shadow:none;border-radius:10px}
+.search input{padding:10px;font-size:13px}.search button{padding:9px 15px;border-radius:7px;font-size:12px}
+.hero>div>p:last-child{font-size:10px!important;margin:10px 0 0}
+.calendar{grid-column:2;grid-row:1 / span 2;border-radius:18px;padding:22px;box-shadow:0 3px 14px #233f6405;justify-content:flex-start}
+.calhead h2{font-size:16px;letter-spacing:-.3px}.calhead button{min-width:34px;min-height:34px;border-radius:9px;background:#f3f6fb}
+.grid{margin-top:20px;gap:5px}.grid span{min-height:32px;font-size:12px}.grid .weekday{font-size:10px}.grid .today{box-shadow:none}
+.caption{font-size:10px;line-height:1.8;padding-top:15px;margin-top:20px}
+.calendar>button{background:#f3f6fb;border-radius:8px;font-size:11px;min-height:35px;color:#365c94}
+#tools{grid-column:1;grid-row:2;min-width:0}
+.sectionhead{margin:0 0 14px}.sectionhead h2{font-size:19px;letter-spacing:-.45px}.sectionhead span{font-size:11px}
+.tools{grid-template-columns:1fr;gap:10px}
+.card{display:grid;grid-template-columns:42px minmax(0,1fr) auto;column-gap:15px;align-items:center;padding:17px 18px;border-radius:13px;box-shadow:none}
+.card:before{display:none}.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px #24416a0b}
+.card .icon{grid-column:1;grid-row:1 / span 2;width:42px;height:42px;border-radius:12px;font-size:18px}
+.card h3{grid-column:2;grid-row:1;font-size:14px;margin:0;letter-spacing:-.2px}
+.card p{grid-column:2;grid-row:2;font-size:11px;line-height:1.6;margin:3px 0 0}
+.card button{grid-column:3;grid-row:1 / span 2;font-size:11px;padding:8px;margin:0;min-height:40px;border-radius:8px;background:#f5f8fd}
+.feature{grid-column:1 / -1;margin:0;border-radius:13px;border-color:#e3eaf3}
+.feature summary{padding:17px 20px;font-size:13px}.feature summary span{font-size:11px}
+.feature-content{gap:24px}.feature h2{font-size:22px}.feature p,.feature ul{font-size:13px}
+.about{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:36px;padding:16px 0 0;margin:0;border-top:1px solid var(--line);border-radius:0}
+.about .eyebrow{font-size:9px;letter-spacing:1.4px}.about h2{font-size:18px;margin:10px 0}.about h3{font-size:14px;margin:0 0 8px}.about p{font-size:12px;line-height:1.8}
+footer{padding:20px 32px;font-size:11px;border-color:#e4eaf3}
+dialog{border-radius:18px}dialog h2{letter-spacing:-.5px}
+@media(min-width:1550px){main{grid-template-columns:minmax(0,1fr) 370px}h1{font-size:44px}.hero>div{padding:32px 36px}}
+@media(max-width:1120px){main{grid-template-columns:minmax(0,1fr);padding:22px 24px;gap:22px}.hero>div{grid-column:1;grid-row:1}.calendar{grid-column:1;grid-row:3}#tools{grid-row:2}.notice-board{margin-left:24px;margin-right:24px}.calendar{max-width:none}.grid span{min-height:36px}}
+@media(max-width:760px){.sidebar{padding:5px 8px}.sidebar nav a{padding:5px 9px;font-size:10px;border:0}.sidebar-note{display:none}header{padding:14px 18px}.top-title{font-size:13px}.top-title small{font-size:10px}.notice-board{margin:12px 14px 0;padding:7px 9px}.notice-track{font-size:12px}.notice-label{font-size:9px}main{padding:18px 14px;gap:20px}.hero>div{padding:25px 22px;border-radius:16px}h1{font-size:34px}.hero .lead{font-size:12px}.sectionhead h2{font-size:18px}.sectionhead span{font-size:10px}.card{grid-template-columns:38px minmax(0,1fr);padding:16px;column-gap:12px}.card .icon{width:38px;height:38px}.card button{grid-column:2;grid-row:3;justify-self:start;min-height:36px;margin-top:8px;padding:5px 10px}.card p{font-size:12px}.card h3{font-size:14px}.about{grid-template-columns:1fr;gap:16px}.feature summary span{display:block;float:none}footer{padding:18px 14px}.calendar{padding:20px}}
+@media print{main{display:block}.hero{display:block}.hero>div,#tools,.notice-board{display:none!important}.calendar{display:block;max-width:none}.grid span{min-height:70px}}
+
+/* v0.5 — readable, calm, touch-friendly */
+:root{--ink:#172b47;--muted:#52647d;--paper:#f4f7fb;--line:#dce5f0}
+body{-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+.sidebar nav a{font-size:14px;min-height:48px}.side-label{font-size:10px;color:#5f7188}
+.top-title{font-size:17px}.top-title small{font-size:12px}.top-meta{font-size:12px}
+main{gap:22px;grid-template-columns:minmax(0,1fr) 340px}
+.hero>div{padding:26px 28px;background:radial-gradient(ellipse at top right,#346f94,transparent 70%),linear-gradient(120deg,#183755,#234883)}
+h1{font-size:clamp(30px,2.8vw,40px);margin:12px 0;letter-spacing:-1.2px}h1 em{display:inline}
+.hero .eyebrow{font-size:10px}.hero .lead{font-size:14px;max-width:500px;line-height:1.65}
+.search{margin-top:18px;gap:4px}.search input{font-size:16px;min-height:46px}.search button{font-size:13px;font-weight:700;min-height:44px}
+.search .clear-search{background:#edf2f8;color:#304e73;padding:8px 10px}
+.hero>div>p:last-child{font-size:11px!important}
+.notice-board{background:#fff5f3;border-color:#f0d8d3}.notice-label{border-color:#edc9c2}.notice-board button{background:#ffe6e1;min-height:36px;color:#9a271d}.notice-track{color:#b42318}
+.sectionhead h2{font-size:21px}.sectionhead span{font-size:12px}
+.card{padding:18px;column-gap:14px;min-height:100px;background:linear-gradient(100deg,#f5f8ff,#fff 65%);border-color:#dce6f5}
+.card:nth-child(2){background:linear-gradient(100deg,#fffaef,#fff 65%);border-color:#eee4cd}.card:nth-child(3){background:linear-gradient(100deg,#f7f3ff,#fff 65%);border-color:#e5ddf2}
+.card h3{font-size:16px;font-weight:750}.card p{font-size:13px;line-height:1.55;max-width:370px}.card .icon{width:44px;height:44px}
+.card button{font-size:12px;min-height:44px;padding:9px 12px;background:#e9f0fd;color:#2555a0;white-space:nowrap}
+.card:nth-child(2) button{background:#fbefd2;color:#795319}.card:nth-child(3) button{background:#eee5fb;color:#67429c}
+.card:focus-within{border-color:#5174ad;box-shadow:0 0 0 3px #5174ad12}
+.calhead h2{font-size:18px}.calhead button{min-width:44px;min-height:44px;font-size:23px}
+.grid span{font-size:14px;min-height:36px}.grid .weekday{font-size:12px;color:#52647d}.caption{font-size:12px;color:#52647d}
+.calendar>button{min-height:44px;font-size:13px;font-weight:650}
+.feature summary{font-size:14px;min-height:54px}.feature summary span{font-size:12px}.about p{font-size:13px}.about h2{font-size:20px}
+#results:empty{display:none}#empty{background:white;padding:18px;border:1px dashed #b7c7de;border-radius:12px;color:#425b7a}
+dialog{max-height:calc(100dvh - 32px);overflow-y:auto}dialog input,dialog select,dialog textarea{font-size:16px!important}dialog .close{min-height:44px;min-width:60px;border:1px solid #ccd8e7;border-radius:9px;background:#f2f6fc;color:#314d72}dialog .primary{min-height:44px}
+@media(min-width:1121px) and (max-width:1330px){.card{grid-template-columns:44px minmax(0,1fr)}.card button{grid-column:2;grid-row:3;justify-self:start;margin-top:9px}.card p{max-width:none}}
+@media(max-width:1120px){main{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}.sidebar{height:calc(68px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom)}.sidebar nav a{font-size:11px;min-height:54px}.top-title{font-size:14px}.top-title small{font-size:11px}.live-pill{display:none}.hero>div{padding:22px}.hero .lead{font-size:14px}h1{font-size:32px}h1 em{display:block}.hero .eyebrow{font-size:9px}.search input{padding:8px;font-size:16px}.search button{padding:8px 10px}.sectionhead h2{font-size:19px}.sectionhead span{font-size:11px}.card{padding:16px;grid-template-columns:42px minmax(0,1fr);min-height:0}.card h3{font-size:16px}.card p{font-size:13px}.card button{font-size:13px;margin-top:10px;min-height:44px}.card .icon{width:42px;height:42px}.notice-board{gap:8px}.notice-board button{min-height:40px}.notice-label{font-size:10px}.notice-track{font-size:13px}.feature summary{padding:16px}.feature summary span{margin-top:4px}.about h2{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.card:hover{transform:none}}
+@media print{main{display:block}.calendar{border:0}.grid span{min-height:70px}}
 </style></head><body>
-<a class="skip" href="#main">Skip to content</a><aside class="sidebar" aria-label="Dashboard navigation"><a class="brand" href="./"><span>i.</span>India Tools</a><div class="side-label">YOUR EVERYDAY TOOLKIT</div><nav aria-label="Main navigation"><a href="#main" class="active" aria-current="location"><span aria-hidden="true">⌂</span>Overview</a><a href="#calendar"><span aria-hidden="true">▦</span>Calendar</a><a href="#tools"><span aria-hidden="true">⊞</span>All tools</a><a href="#about"><span aria-hidden="true">ⓘ</span>About</a></nav><div class="sidebar-note"><strong>Small tools. Real help.</strong>Free to use, thoughtfully made.<br>By Sarada Sutar</div></aside><header><div class="top-title"><span class="mobile-brand">India Tools · </span>Your daily dashboard<small>A little clarity for your everyday.</small></div><div class="top-meta"><time id="headerDate"></time><span class="live-pill">Free public tools</span></div></header>
+<a class="skip" href="#main">Skip to content</a><aside class="sidebar" aria-label="Dashboard navigation"><a class="brand" href="./"><span>i.</span>India Tools</a><div class="side-label">YOUR EVERYDAY TOOLKIT</div><nav aria-label="Main navigation"><a href="#main" class="active" aria-current="location"><span aria-hidden="true">⌂</span>Overview</a><a href="#calendar"><span aria-hidden="true">▦</span>Calendar</a><a href="#tools"><span aria-hidden="true">⊞</span>All tools</a><a href="#about"><span aria-hidden="true">ⓘ</span>About</a></nav><div class="sidebar-note"><strong>Small tools. Real help.</strong>Free to use, thoughtfully made.<br>By Sarada Sutar</div></aside><header><div class="top-title"><span class="mobile-brand">India Tools · </span>Your daily dashboard<small>Calendars, calculations & everyday clarity.</small></div><div class="top-meta"><time id="headerDate"></time><span class="live-pill">Free public tools</span></div></header>
 <section class="notice-board" id="noticeBoard" aria-label="Notice board" hidden><strong class="notice-label" id="noticeLabel"></strong><div class="notice-window"><div class="notice-track" id="noticeTrack"></div></div><button id="noticePause" type="button" aria-pressed="false">Pause</button></section>
-<main id="main"><section class="hero"><div><div class="eyebrow">By Sarada Sutar · Free public tools</div><h1>Everyday,<br><em>made easier.</em></h1><p class="lead">A thoughtful home for calendars and useful little tools. Find a date, work out the days, and get on with your day.</p><form class="search" role="search"><input id="search" aria-label="Find a tool" placeholder="Find a calendar or tool…" type="search"><button>Search</button></form><p style="font-size:13px">No account needed · Calculations run in your browser</p></div>
+<main id="main"><section class="hero"><div><div class="eyebrow">By Sarada Sutar · Free public tools</div><h1>Everyday, <br><em>made easier.</em></h1><p class="lead">Calendars and practical tools for a simpler day. Choose a tool below, or find exactly what you need.</p><form class="search" role="search"><input id="search" aria-label="Find a tool" placeholder="Find a calendar or tool…" type="search"><button type="button" class="clear-search" id="clearSearch" hidden aria-label="Clear tool search">Clear</button><button>Search</button></form><p style="font-size:13px">No account needed · Calculations run in your browser</p></div>
 <section id="calendar" class="calendar" aria-label="Gregorian calendar"><div class="calhead"><button id="prev" aria-label="Previous month">‹</button><h2 id="month" aria-live="polite"></h2><button id="next" aria-label="Next month">›</button></div><div class="grid" id="days"></div><p class="caption" id="dateCaption"></p><button id="current" style="margin-top:12px">Back to today</button> <button id="print" style="margin-top:12px">Print calendar</button></section></section>
 <section id="tools"><div class="sectionhead"><h2>Your everyday toolkit</h2><span>Choose a tool to begin</span></div><div class="tools">
 <article class="card" data-key="calendar english gregorian print month"><div class="icon" aria-hidden="true">▦</div><h3>Monthly calendar</h3><p>Browse Gregorian months and print a clean calendar for your desk.</p><button id="openCalendar">Open calendar ↗</button></article>
@@ -102,8 +186,8 @@ footer{align-items:center;flex-wrap:wrap}#noticeAdminOpen{border:1px solid #d6e0
 <article class="card" data-key="percentage calculator math"><div class="icon" aria-hidden="true">%</div><h3>Percentage calculator</h3><p>Work out a percentage of any amount in a couple of taps.</p><button data-dialog="percent">Calculate percentage ↗</button></article>
 </div><p id="empty" role="status" hidden>No matching tool. Try “calendar”, “days”, or “percentage”.</p><p id="results" role="status" style="font-size:13px"></p></section>
 <details class="feature"><summary>Coming next · Odia calendar &amp; festivals <span>Explore planned features</span></summary><div class="feature-content"><div><div class="eyebrow" style="color:#b9d5c3">Planned signature tool</div><h2>Your calendar.<br>A wider audience.</h2><p>The next step is to connect Sarada’s existing calendar and publish a carefully verified Odia calendar experience here.</p></div><div><p>Planned for the calendar collection</p><ul><li>English and Odia views</li><li>Yearly festival list and clear source notes</li><li>Readable print layouts</li><li>Share a direct link to a date or festival</li></ul><p style="font-size:13px">Odia dates and festival data are not connected in this starter.</p></div></div></details>
-<section class="about" id="about"><div><div class="eyebrow">Made with purpose</div><h2>Useful tools. A welcoming home.</h2><p>A public tools project by Sarada Sutar, built to make everyday tasks easier. Start with a few dependable tools and grow with care.</p></div><div><h3>Privacy &amp; transparency</h3><p>This starter has no sign-in, analytics, or server submission. Date and percentage calculations stay in this page. Your hosting provider may process ordinary access logs.</p><p>India Tools is an independent personal project. It is not a government service.</p></div></section></main>
-<footer><span>India Tools · By Sarada Sutar</span><span>Version 0.3 · Calendar data: Gregorian · <a href="https://github.com/saradasutar/india">Project on GitHub</a></span> <button id="noticeAdminOpen" type="button">Admin · Notice board</button></footer>
+<section class="about" id="about"><div><div class="eyebrow">Made with purpose</div><h2>Useful tools. A welcoming home.</h2><p>A public tools project by Sarada Sutar, built to make everyday tasks easier. Start with a few dependable tools and grow with care.</p></div><div><h3>Privacy &amp; transparency</h3><p>This website has no sign-in, analytics, or server submission. Date and percentage calculations stay in this page. Your hosting provider may process ordinary access logs.</p><p>India Tools is an independent personal project. It is not a government service.</p></div></section></main>
+<footer><span>India Tools · By Sarada Sutar</span><span>Version 0.5 · Calendar data: Gregorian · <a href="https://github.com/saradasutar/india">Project on GitHub</a></span> <button id="noticeAdminOpen" type="button">Admin · Notice board</button></footer>
 <dialog id="noticeAdmin" aria-labelledby="noticeAdminTitle"><button class="close" type="button">Close</button><h2 id="noticeAdminTitle">Notice board &amp; quote</h2><p class="notice-help">Preview your changes here. Publishing requires your authorised GitHub account. Preview changes affect only this open page.</p><form id="noticeForm"><label><input id="noticeEnabled" type="checkbox"> Show notice board</label><label>Heading<select id="noticeKind"><option>Notice</option><option>Quote of the day</option><option>Announcement</option></select></label><label>Message or quote<textarea id="noticeText" rows="3" maxlength="1000" required></textarea></label><label>Optional HTTPS link<input id="noticeLink" type="url" placeholder="https://example.com"></label><label>Scrolling speed<select id="noticeSpeed"><option value="slow">Slow</option><option value="normal">Normal</option><option value="fast">Fast</option></select></label><div class="admin-actions"><button type="submit" class="primary">Preview changes</button><button id="noticePrepare" type="button">Prepare for publishing</button><button id="noticeRestore" type="button">Restore published</button></div></form><section id="noticePublish" hidden><p>Copy these settings, open the GitHub editor, replace the file contents and choose <strong>Commit changes</strong>. The public notice updates after the website deployment finishes.</p><label>Settings to publish<textarea id="noticeExport" rows="9" readonly></textarea></label><div class="admin-actions"><button id="noticeCopy" type="button">Copy settings</button><a href="https://github.com/saradasutar/india/edit/main/notice-board.json" target="_blank" rel="noopener noreferrer">Open GitHub editor ↗</a></div></section><p id="noticeStatus" role="status"></p></dialog>
 <dialog id="dates"><button class="close">Close</button><h2>Days between dates</h2><form id="dateForm"><label>Start date<input type="date" id="start" required></label><label>End date<input type="date" id="end" required></label><button class="primary">Calculate</button><output id="dateResult" aria-live="polite"></output></form><p style="font-size:13px">Elapsed calendar days, excluding the start date. End must be on or after start.</p></dialog>
 <dialog id="percent"><button class="close">Close</button><h2>Percentage calculator</h2><form id="percentForm"><label>Percentage<input id="rate" type="number" step="any" required></label><label>Of amount<input id="amount" type="number" step="any" required></label><button class="primary">Calculate</button><output id="percentResult" aria-live="polite"></output></form></dialog>
@@ -114,7 +198,8 @@ const now=new Date();let year=now.getFullYear(),month=now.getMonth();
 function renderCalendar(){const date=new Date(year,month,1);$('month').textContent=date.toLocaleDateString('en-IN',{month:'long',year:'numeric'});$('days').replaceChildren();for(const name of ['Su','Mo','Tu','We','Th','Fr','Sa']){const el=document.createElement('span');el.className='weekday';el.textContent=name;$('days').append(el)}for(let i=0;i<date.getDay();i++)$('days').append(document.createElement('span'));for(let n=1;n<=new Date(year,month+1,0).getDate();n++){const el=document.createElement('span');el.textContent=n;if(n===now.getDate()&&year===now.getFullYear()&&month===now.getMonth()){el.className='today';el.setAttribute('aria-current','date')}$('days').append(el)}$('dateCaption').textContent='Today · '+now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · Device local date'}
 function move(delta){month+=delta;if(month<0){month=11;year--}if(month>11){month=0;year++}renderCalendar()}
 $('prev').onclick=()=>move(-1);$('next').onclick=()=>move(1);$('current').onclick=()=>{year=now.getFullYear();month=now.getMonth();renderCalendar()};$('print').onclick=()=>window.print();renderCalendar();
-function filter(){const q=$('search').value.trim().toLowerCase();let count=0;document.querySelectorAll('.card').forEach(card=>{card.hidden=!((card.dataset.key+' '+card.textContent).toLowerCase().includes(q));if(!card.hidden)count++});$('empty').hidden=count!==0;$('results').textContent=q?count+' matching tools':''}
+function filter(){const q=$('search').value.trim().toLowerCase();$('clearSearch').hidden=!q;let count=0;document.querySelectorAll('.card').forEach(card=>{card.hidden=!((card.dataset.key+' '+card.textContent).toLowerCase().includes(q));if(!card.hidden)count++});$('empty').hidden=count!==0;$('results').textContent=q?count+' matching tools':''}
+$('clearSearch').onclick=()=>{$('search').value='';filter();$('search').focus()};
 $('search').addEventListener('input',filter);document.querySelector('.search').onsubmit=e=>{e.preventDefault();filter();$('tools').scrollIntoView({behavior:'smooth'})};
 $('openCalendar').onclick=()=>{$('calendar').scrollIntoView({behavior:'smooth'});$('current').focus()};
 document.querySelectorAll('[data-dialog]').forEach(b=>b.onclick=()=>$(b.dataset.dialog).showModal());document.querySelectorAll('dialog .close').forEach(b=>b.onclick=()=>b.closest('dialog').close());
