@@ -1,6 +1,6 @@
 # India Tools
 
-An independent public dashboard by Sarada Sutar. Version 1.8 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
+An independent public dashboard by Sarada Sutar. Version 1.9 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
 
 ## Public tools
 
@@ -62,3 +62,18 @@ See [CENTRAL-GOVT-CALCULATOR-NOTES.md](CENTRAL-GOVT-CALCULATOR-NOTES.md) for the
 Sources:
 - 2026 DoPT OM, F.No.12/2/2023-JCA dated 03.07.2025: [PDF](https://d1jmc0u14z2tmp.cloudfront.net/uploads/media/List-of-Holiday-2026-DoPT-0693911b85f7cc3-00668785.pdf).
 - 2027 DoPT OM, F.No.12/2/2023-JCA dated 16.07.2026: [PDF](https://dtf.in/wp-content/files/DoPT_O.M._dated_16.07.2026__Holidays_to_be_observed_in_Central_Government_Offices_during_the_year_2027_-_reg...PDF).
+
+
+## Bengaluru and Karnataka holiday sources — v1.9
+
+- Added the Bengaluru 2026 closed-holiday selections used by ICAR-NIVEDI, issued in pursuance of the Central Government Employees Welfare Co-ordination Committee, Karnataka letter: Makara Sankranti (14 January), Ugadi (19 March), and Ganesh Chaturthi (14 September).
+- Added the ICAR-NIVEDI 2026 restricted-holiday list as a Bengaluru Central Government office reference. Employees at other offices should confirm their department's adopted list.
+- Added the CGEWCC Karnataka circular revising Id-ul-Zuha (Bakrid) in Bengaluru from 27 May to 28 May 2026.
+- Added the 2027 Karnataka State restricted-holiday list as a separate state-government reference, not a Central Government entitlement.
+- Kept the Delhi DoPT Annexure-II RH dates behind a separate off-by-default reference toggle.
+- Users can select sources independently and save RH dates in their local browser shortlist.
+
+Source links:
+- ICAR-NIVEDI Bengaluru 2026 office holiday list: https://nivedi.res.in/holidays.php
+- CGEWCC Karnataka Bakrid revision circular: https://www.nftets.org/adminupload/1779358020Holiday%20Circular.pdf
+- Karnataka 2027 State RH report (notification dated 20/21 November 2026): https://m.daijiworld.com/news/newsDisplay?newsID=1335984
