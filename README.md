@@ -22,7 +22,7 @@ Set Settings → Pages → Deploy from a branch → `main` → `/(root)` if Page
 
 Core calculations and mocked backend security flows are checked locally; source assets, HTML IDs and JavaScript syntax are checked. The v0.8 browser preview stopped before desktop/mobile inspection. Actual Apps Script deployment, OTP delivery, Drive uploads, visit counts and public Google links require a deployed backend and live acceptance test. See [UPGRADE-STATUS.md](UPGRADE-STATUS.md) for the 100-improvement programme and release status, plus [PUBLIC-DASHBOARD-STRATEGY.md](PUBLIC-DASHBOARD-STRATEGY.md) for the earlier website research and its access limitations.
 
-To roll back a frontend release, revert its GitHub commit; keep the private backend and `india-config.json` as they were. No backend migration is required for v0.8.
+To roll back a frontend release, revert its GitHub commit; keep the private backend and `india-config.json` as they were. No backend migration is required for the v1.3 public frontend.
 
 ## v1.3 public release additions
 
