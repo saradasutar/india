@@ -35,6 +35,18 @@
       <form class="search" id="searchForm" role="search"><i data-icon="search"></i><input id="search" type="search" aria-label="Find a tool" placeholder="What would you like to do?" autocomplete="off"><button class="clear-search" id="clearSearch" type="button" aria-label="Clear tool search" hidden>Clear</button><button class="primary">Search</button></form>
       <div class="welcome-foot"><i data-icon="shield"></i>No account needed · Calculations stay in your browser</div>
     </section>
+    <section class="dopt-calendar-card" id="doptCalendarCard" aria-labelledby="doptCalendarTitle">
+      <div class="dopt-calendar-head">
+        <div><span class="eyebrow">Central Government holidays</span><h2 id="doptCalendarTitle">Monthly holiday calendar</h2><p>DoPT compulsory holidays · Bengaluru / Karnataka office reference</p></div>
+        <div class="dopt-month-nav"><button id="doptPrev" type="button" class="icon-button" aria-label="Previous month">‹</button><strong id="doptMonthLabel" aria-live="polite"></strong><button id="doptNext" type="button" class="icon-button" aria-label="Next month">›</button></div>
+      </div>
+      <div class="dopt-calendar-layout">
+        <div class="dopt-month-grid" id="doptMonthGrid" role="group" aria-label="Monthly calendar with DoPT holidays"></div>
+        <aside class="dopt-month-agenda" aria-label="Holidays this month"><div class="dopt-agenda-title">Holidays this month</div><div id="doptHolidayList"></div><p id="doptSelectedDate" class="dopt-selected-date" aria-live="polite">Select a date to see its details.</p></aside>
+      </div>
+      <div class="dopt-calendar-foot"><span><i class="dopt-dot dopt-dot-holiday"></i> DoPT compulsory holiday</span><span><i class="dopt-dot dopt-dot-weekend"></i> Weekend</span><a href="https://dtf.in/wp-content/files/DoPT_O.M._dated_16.07.2026__Holidays_to_be_observed_in_Central_Government_Offices_during_the_year_2027_-_reg...PDF" target="_blank" rel="noopener noreferrer">2027 DoPT OM ↗</a><a href="https://d1jmc0u14z2tmp.cloudfront.net/uploads/media/List-of-Holiday-2026-DoPT-0693911b85f7cc3-00668785.pdf" target="_blank" rel="noopener noreferrer">2026 DoPT OM ↗</a></div>
+      <p class="dopt-calendar-note">Shows the 14 compulsory holidays for Central Government offices outside Delhi/New Delhi. Three additional holidays and local restricted holidays are set by the State CGEWCC / office; not included until Bengaluru/Karnataka's applicable list is verified. Islamic holiday dates may change by local moon-sighting notification. Check the original office order before relying on a date.</p>
+    </section>
     <section id="tools" aria-labelledby="toolsTitle">
       <div class="sectionhead"><div><h2 id="toolsTitle">Your everyday toolkit</h2><p>A useful answer, just a few taps away.</p></div><span class="tool-count" aria-label="21 available tools">21</span></div>
       <div class="tool-toolbar"><div class="filters" role="group" aria-label="Tool category"><button class="filter" data-category="All" aria-pressed="true">All tools</button><button class="filter" data-category="Dates" aria-pressed="false">Dates</button><button class="filter" data-category="Numbers" aria-pressed="false">Numbers</button><button class="filter" data-category="Text" aria-pressed="false">Text</button><button class="filter" data-category="Utility" aria-pressed="false">Utility</button></div><select id="toolView" aria-label="Choose which tools to show"><option value="all">All available tools</option><option value="favorites">My favourites</option><option value="recent">Recently used</option></select></div>
