@@ -61,3 +61,47 @@ button,a,.card,.rail-card,.calendar{transition:background-color .18s,border-colo
 @media(max-width:1000px){.welcome{padding:28px}}
 @media(max-width:700px){.welcome{padding:24px 21px}.welcome:before{right:16px;bottom:14px;font-size:1rem;letter-spacing:2px}.welcome h1{font-size:2.05rem}.sectionhead{align-items:flex-start}.card{border-radius:15px}}
 @media(prefers-reduced-motion:reduce){button,a,.card,.rail-card,.calendar{transition:none!important}}
+
+
+/* v1.0 — visual, responsive and accessibility refinement */
+:root{--radius:21px;--shadow:0 12px 32px rgba(20,45,82,.075)}
+body{letter-spacing:.005em}
+main{gap:30px}
+.main-column{gap:32px}
+.tools{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{min-height:208px;padding:20px;background:linear-gradient(155deg,var(--surface),color-mix(in srgb,var(--soft) 30%,var(--surface)));border-color:color-mix(in srgb,var(--line) 82%,var(--primary))}
+.card[data-category=Dates]{background:linear-gradient(145deg,var(--surface),#eaf6f1)}
+.card[data-category=Numbers]{background:linear-gradient(145deg,var(--surface),#fff4e3)}
+.card[data-category=Text]{background:linear-gradient(145deg,var(--surface),#f3edfb)}
+.card[data-category=Utility]{background:linear-gradient(145deg,var(--surface),#eaf1ff)}
+.card h3{font-size:1rem;font-weight:800}
+.card p{font-size:.79rem;line-height:1.55}
+.card-top{margin-bottom:14px}
+.tool-icon{box-shadow:inset 0 0 0 1px #ffffff80}
+.tool-open{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent);padding-top:9px}
+.welcome{min-height:260px;display:flex;flex-direction:column;justify-content:center}
+.welcome .search{max-width:700px}
+.sectionhead{margin-bottom:18px}
+.tool-toolbar{padding:10px;background:color-mix(in srgb,var(--surface) 78%,var(--bg));border:1px solid var(--line);border-radius:14px}
+.filter{font-weight:750}
+.filter[aria-pressed=true]{box-shadow:0 2px 8px rgba(30,70,130,.1)}
+.calendar,.rail-card,.government{box-shadow:0 8px 24px rgba(25,51,87,.055)}
+.calendar{border-top:3px solid var(--primary)}
+.government{padding:30px}
+.collection-empty{border:1px dashed var(--line);background:var(--bg)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #d18a22;outline-offset:3px}
+button:disabled{transform:none}
+.dark .card{background:linear-gradient(145deg,#1b2b42,#1b304a);border-color:#3a506d}
+.dark .card[data-category=Dates]{background:linear-gradient(145deg,#1b2b42,#203d38)}
+.dark .card[data-category=Numbers]{background:linear-gradient(145deg,#1b2b42,#40351f)}
+.dark .card[data-category=Text]{background:linear-gradient(145deg,#1b2b42,#342a48)}
+.dark .card[data-category=Utility]{background:linear-gradient(145deg,#1b2b42,#233955)}
+.dark .tool-open{border-color:#3b506b}
+.dark .tool-toolbar{background:#17263a}
+.dark .collection-empty{background:#142238}
+@media(min-width:1500px){.tools{grid-template-columns:repeat(3,minmax(0,1fr))}main{grid-template-columns:minmax(0,1fr) 340px;max-width:1680px}}
+@media(max-width:1200px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){main{gap:22px}.main-column{gap:24px}.welcome{min-height:0;padding:25px 22px}.tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{min-height:190px;padding:14px;border-radius:16px;display:flex;gap:0}.card-top{display:flex;align-items:center;margin-bottom:12px}.tool-icon{width:39px;height:39px}.favorite{position:static;margin-left:auto}.card h3{font-size:.88rem;padding:0;margin-bottom:5px}.card p{font-size:.73rem;line-height:1.45;margin:0 0 10px}.tool-open{font-size:.74rem;padding-top:7px;min-height:34px}.tool-toolbar{padding:8px}.filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}.filter{font-size:.65rem;padding:7px 3px;min-width:0}.tool-toolbar select{width:100%}.government{padding:20px}.sectionhead p{line-height:1.5}}
+@media(max-width:390px){.tools{grid-template-columns:1fr}.card{min-height:150px;display:grid;grid-template-columns:42px minmax(0,1fr);gap:0 12px;padding:15px}.card-top{display:contents}.tool-icon{grid-column:1;grid-row:1 / span 3}.favorite{position:absolute;right:8px;top:8px}.card h3,.card p,.tool-open{grid-column:2}.card h3{padding-right:28px}.card p{font-size:.78rem}.filters{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-color-scheme:dark){body:not(.light){color-scheme:dark}}
+@media(prefers-reduced-motion:reduce){.card:hover{transform:none}}
