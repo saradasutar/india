@@ -23,3 +23,14 @@ Set Settings → Pages → Deploy from a branch → `main` → `/(root)` if Page
 Core calculations and mocked backend security flows are checked locally; source assets, HTML IDs and JavaScript syntax are checked. The v0.8 browser preview stopped before desktop/mobile inspection. Actual Apps Script deployment, OTP delivery, Drive uploads, visit counts and public Google links require a deployed backend and live acceptance test. See [UPGRADE-STATUS.md](UPGRADE-STATUS.md) for the 100-improvement programme and release status, plus [PUBLIC-DASHBOARD-STRATEGY.md](PUBLIC-DASHBOARD-STRATEGY.md) for the earlier website research and its access limitations.
 
 To roll back a frontend release, revert its GitHub commit; keep the private backend and `india-config.json` as they were. No backend migration is required for v0.8.
+
+## v1.1 public release additions
+
+- Refined responsive card layouts, category colour treatments, focus visibility and dynamic tool-count display.
+- Added a web app manifest and service worker. After a successful first online visit, the public dashboard shell and its local calculator assets can be served offline; dynamic admin publishing, calendar feeds and remote resources still require a connection.
+- Added a sitemap and crawler rules. The admin page is excluded from indexing.
+- The public site remains an independent personal project, not an official Government of India service.
+
+## Release checks still required
+
+GitHub source commits do not prove the Pages deployment or browser rendering has completed. Verify the live public URL on a phone and desktop, test install/offline behaviour after one online visit, and confirm all calculator flows. The backend URL remains blank in `india-config.json`; email OTP, publishing, visitor metrics and calendar management are therefore not active until the private Apps Script deployment is connected and tested. No official salary, pension or pay-fixation calculator has been published in this release; those require rule-by-rule validation against current government orders before being offered as authoritative tools.
