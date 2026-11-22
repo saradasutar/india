@@ -65,7 +65,11 @@ document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{category=b.datase
 $('resetFilters').onclick=()=>{$('search').value='';$('toolView').value='all';document.querySelector('.filter[data-category="All"]').click();$('search').focus();};
 $('searchForm').onsubmit=e=>{e.preventDefault();filterTools();scrollToElement($('tools'));};
 document.addEventListener('keydown',e=>{if(e.key==='/'&&!e.ctrlKey&&!e.altKey&&!e.metaKey&&!e.target.closest('input,textarea,select,[contenteditable="true"]')&&!document.querySelector('dialog[open]')){e.preventDefault();$('search').focus();}});
-$('resetPersonal').onclick=()=>{if(!confirm('Clear favourites and recently used tools from this browser?'))return;favorites=[];recent=[];savePersonal();renderCards();renderRecent();filterTools();$('resetStatus').textContent='Favourites and recent tools cleared. Appearance preferences are unchanged.';};
+$('resetPersonal').onclick=()=>{if(!confirm('Clear favourites and recently used tools from this browser?'))return;favorites=[];recent=[];savePersonal();renderCards();renderRecent();filterTools();
+const toolCount=$('toolCards').children.length;
+$('toolsTitle').setAttribute('aria-label','Your everyday toolkit, '+toolCount+' tools');
+$('tools').querySelector('.tool-count').textContent=String(toolCount);
+$('tools').querySelector('.tool-count').setAttribute('aria-label',toolCount+' available tools');$('resetStatus').textContent='Favourites and recent tools cleared. Appearance preferences are unchanged.';};
 renderCards();renderRecent();filterTools();
 function options(select,values){select.replaceChildren();for(const [value,label] of Object.entries(values)){const o=document.createElement('option');o.value=value;o.textContent=label;select.append(o);}}
 function unitOptions(){const group=Core.units[$('input-category').value];const values=Object.fromEntries(Object.entries(group).map(([id,v])=>[id,v[0]]));options($('input-from'),values);options($('input-to'),values);$('input-to').selectedIndex=Math.min(1,$('input-to').length-1);}
