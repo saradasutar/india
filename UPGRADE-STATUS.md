@@ -63,3 +63,11 @@ Connect the private Apps Script `/exec` URL in `india-config.json`, then test em
 - Added a print action with a dedicated print layout showing the month grid and holiday agenda.
 - Corrected the 2027 compulsory holiday dates to match the DoPT OM (including Dussehra 9 October, Diwali 29 October, Guru Nanak Jayanti 14 November, and Milad 15 August).
 - Clearly labels Annexure-II RH data as Delhi/New Delhi reference only; Bengaluru users must verify the State CGEWCC / office RH list.
+
+
+## v1.8 final validation
+
+- CSS print isolation refined and static asset cache keys refreshed to v1.8.
+- Dashboard JavaScript and service-worker syntax compile successfully.
+- Restricted holiday data contains 32 date entries for 2026 and 32 for 2027; entries sharing a date are grouped under one calendar date.
+- RH toggle, local shortlist, print controls, and Bengaluru-specific applicability disclaimer are present in the public HTML/JS.
