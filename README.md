@@ -24,7 +24,7 @@ Core calculations and mocked backend security flows are checked locally; source 
 
 To roll back a frontend release, revert its GitHub commit; keep the private backend and `india-config.json` as they were. No backend migration is required for v0.8.
 
-## v1.2 public release additions
+## v1.3 public release additions
 
 - Refined responsive card layouts, category colour treatments, focus visibility and dynamic tool-count display.
 - Added a web app manifest and service worker. After a successful first online visit, the public dashboard shell and its local calculator assets can be served offline; dynamic admin publishing, calendar feeds and remote resources still require a connection.
