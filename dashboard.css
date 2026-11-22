@@ -196,3 +196,5 @@ button:disabled{transform:none}
  body.print-dopt .dopt-calendar-foot a{display:none!important}
  body.print-dopt .dopt-calendar-card *{break-inside:avoid}
 }
+
+@media print{body.print-dopt #main>.right-rail{display:none!important}}
