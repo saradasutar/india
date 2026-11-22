@@ -26,3 +26,15 @@ Connect the private Apps Script `/exec` URL in `india-config.json`, then test em
 - Added PWA manifest, offline shell caching, sitemap and robots rules.
 - Fixed a malformed separator between existing tool definitions that prevented the public dashboard script from parsing; `dashboard.js` and `service-worker.js` now pass JavaScript syntax compilation checks.
 - Live GitHub Pages rendering, mobile interaction, install prompt behaviour and offline acceptance still require browser testing after Pages deployment. The private Apps Script backend remains unconfigured in the public repository.
+
+
+## v1.4 Central Government employee toolkit
+
+- Added 7th CPC promotion/MACP fixation estimate using Rule 13's one-increment then equal/next-higher-cell method for the standard civilian matrix; special cases and DNI options remain outside scope.
+- Added configurable HRA and transport allowance estimators (rates are entered by the user, not hardcoded).
+- Added retirement gratuity estimator with 66 half-yearly period and ₹25 lakh ceiling controls.
+- Added retirement EL/HPL encashment estimator enforcing the combined 300-day limit.
+- Added commutation estimator requiring the user to enter the applicable official factor.
+- Updated basic pension estimate to apply Rule 44's ₹9,000 minimum and ₹1,25,000 maximum.
+- Added `CENTRAL-GOVT-CALCULATOR-NOTES.md` with formulas, source links and limitations.
+- Source checks: dashboard and service-worker JavaScript syntax compile; 21 calculator definitions are present. Browser-level acceptance and live Pages deployment are still unverified.
