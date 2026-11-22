@@ -54,3 +54,12 @@ Connect the private Apps Script `/exec` URL in `india-config.json`, then test em
 - Clearly excludes the three State CGEWCC-selected holidays and local restricted holidays until the applicable Karnataka/Bengaluru notification is verified; flags moon-dependent dates as subject to revision.
 - Added links to the 2026 and 2027 DoPT Office Memoranda and refreshed the PWA cache.
 - JavaScript syntax, calendar data and deployment asset versions are checked in source. Live browser/mobile appearance and Pages deployment still need acceptance testing.
+
+
+## v1.7 Restricted holiday references and printing
+
+- Added separate RH reference toggle and amber date markers for DoPT Annexure-II dates in 2026 and 2027.
+- Added monthly agenda entries with personal shortlist save/remove controls; shortlist is stored locally in the user's browser only.
+- Added a print action with a dedicated print layout showing the month grid and holiday agenda.
+- Corrected the 2027 compulsory holiday dates to match the DoPT OM (including Dussehra 9 October, Diwali 29 October, Guru Nanak Jayanti 14 November, and Milad 15 August).
+- Clearly labels Annexure-II RH data as Delhi/New Delhi reference only; Bengaluru users must verify the State CGEWCC / office RH list.
