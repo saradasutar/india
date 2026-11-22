@@ -198,3 +198,21 @@ button:disabled{transform:none}
 }
 
 @media print{body.print-dopt #main>.right-rail{display:none!important}}
+
+/* v1.9 — jurisdiction-specific holiday markers and source controls */
+.dopt-source-toggles{display:flex;flex-wrap:wrap;gap:9px 16px;min-width:0}
+.dopt-day.is-cg-closed{background:#e9f4ff;color:#1d5689;border-color:#a9cce9;font-weight:850}
+.dopt-day.is-cg-closed:before{content:"";position:absolute;top:4px;right:4px;width:5px;height:5px;border-radius:50%;background:#347fbd}
+.dopt-day.is-cg-closed.is-holiday{background:linear-gradient(135deg,#fff0e8 0 50%,#e9f4ff 50% 100%);border-color:#a9cce9}
+.dopt-day.is-restricted{background:#fff8e6;color:#8a5a0a;border-color:#ead18e}
+.dopt-day.is-restricted:after{background:#d49a22}
+.dopt-day.is-holiday.is-restricted{background:linear-gradient(135deg,#fff0e8 0 50%,#fff8e6 50% 100%);border-color:#dfb77d}
+.dopt-agenda-row.bengaluru-closed{border-left:3px solid #347fbd;padding-left:6px}
+.dopt-agenda-row.bengaluru-rh{border-left:3px solid #d49a22;padding-left:6px}
+.dopt-agenda-row.karnataka-rh{border-left:3px solid #7c69b4;padding-left:6px}
+.dopt-agenda-row.delhi-rh{border-left:3px solid #9aa8b8;padding-left:6px}
+.dopt-dot-cg{background:#347fbd}.dopt-dot-state{background:#7c69b4}
+.dark .dopt-day.is-cg-closed{background:#1e3852;color:#c8e5ff;border-color:#416b91}
+.dark .dopt-day.is-cg-closed.is-holiday{background:linear-gradient(135deg,#462c26 0 50%,#1e3852 50% 100%)}
+.dark .dopt-day.is-restricted{background:#40351f;color:#ffdf9c;border-color:#78602c}
+@media(max-width:760px){.dopt-source-toggles{flex-direction:column;gap:7px}.dopt-calendar-foot{gap:8px 12px}}
