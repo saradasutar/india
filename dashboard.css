@@ -159,3 +159,40 @@ button:disabled{transform:none}
 .dark .dopt-month-agenda{background:#142238;border-color:#34465e}
 @media(max-width:760px){.dopt-calendar-card{padding:16px;margin-bottom:22px}.dopt-calendar-head{flex-wrap:wrap}.dopt-calendar-layout{grid-template-columns:1fr;gap:12px}.dopt-month-grid{gap:4px}.dopt-day{min-height:36px;height:36px}.dopt-day-blank{min-height:36px}.dopt-month-agenda{padding:11px 12px}.dopt-holiday-item{min-height:32px}}
 @media(max-width:380px){.dopt-calendar-head{gap:9px}.dopt-month-nav{width:100%;justify-content:flex-start}.dopt-day{min-height:33px;height:33px;font-size:.72rem}}
+
+/* v1.7 — restricted-holiday references, personal shortlist and print layout */
+.dopt-calendar-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 3px;padding:9px 11px;background:var(--bg);border:1px solid var(--line);border-radius:11px}
+.dopt-toggle{display:flex;align-items:center;gap:8px;font-size:.73rem;font-weight:750}
+.dopt-toggle input{width:16px;height:16px;min-height:0;accent-color:var(--primary)}
+.dopt-shortlist-count{font-size:.68rem;color:var(--muted);font-weight:700}
+.dopt-day.is-restricted{background:#fff8e6;color:#8a5a0a;border-color:#ead18e}
+.dopt-day.is-restricted:before{content:"";position:absolute;top:4px;right:4px;width:5px;height:5px;border-radius:50%;background:#d49a22}
+.dopt-day.is-holiday.is-restricted{background:linear-gradient(135deg,#fff0e8 0 50%,#fff8e6 50% 100%);border-color:#dfb77d}
+.dopt-agenda-row{display:flex;align-items:center;gap:5px;border-bottom:1px solid var(--line)}
+.dopt-agenda-row:last-child{border-bottom:0}
+.dopt-agenda-row .dopt-holiday-item{flex:1;min-width:0;border:0}
+.dopt-agenda-row.is-rh .dopt-holiday-date{color:#9a6b12}
+.dopt-agenda-row.is-rh .dopt-holiday-name{font-weight:600}
+.dopt-rh-save{flex:0 0 auto;min-height:30px;padding:3px 7px;border:1px solid transparent;background:transparent;color:#95630c;font-size:.66rem;border-radius:8px}
+.dopt-rh-save:hover,.dopt-rh-save[aria-pressed=true]{background:#fff4d7;border-color:#ead18e;color:#77500b}
+.dopt-dot-restricted{background:#d49a22}
+.dark .dopt-day.is-restricted{background:#40351f;color:#ffdf9c;border-color:#78602c}
+.dark .dopt-day.is-holiday.is-restricted{background:linear-gradient(135deg,#462c26 0 50%,#40351f 50% 100%);border-color:#92703c}
+.dark .dopt-rh-save{color:#f1ca76}
+.dark .dopt-rh-save:hover,.dark .dopt-rh-save[aria-pressed=true]{background:#40351f;border-color:#78602c;color:#ffdf9c}
+@media(max-width:760px){.dopt-calendar-controls{align-items:flex-start;flex-direction:column;gap:6px}.dopt-agenda-row{gap:2px}.dopt-rh-save{padding:3px 5px}}
+@media print{
+ body.print-dopt{padding:0!important;background:#fff!important;color:#111!important}
+ body.print-dopt>*{display:none!important}
+ body.print-dopt #main{display:block!important;padding:0!important;margin:0!important}
+ body.print-dopt #main .main-column{display:block!important}
+ body.print-dopt #main .main-column>*{display:none!important}
+ body.print-dopt #doptCalendarCard{display:block!important;margin:0!important;padding:12px!important;border:0!important;box-shadow:none!important;background:#fff!important;color:#111!important}
+ body.print-dopt .dopt-calendar-layout{grid-template-columns:1.1fr .9fr!important}
+ body.print-dopt .dopt-calendar-controls,body.print-dopt #doptPrev,body.print-dopt #doptNext,body.print-dopt #doptPrint{display:none!important}
+ body.print-dopt .dopt-day{color:#111!important;min-height:28px!important;height:28px!important}
+ body.print-dopt .dopt-month-agenda{background:#fff!important;color:#111!important}
+ body.print-dopt .dopt-calendar-note,body.print-dopt .dopt-calendar-foot{color:#333!important}
+ body.print-dopt .dopt-calendar-foot a{display:none!important}
+ body.print-dopt .dopt-calendar-card *{break-inside:avoid}
+}
