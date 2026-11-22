@@ -1,0 +1,19 @@
+{
+  "name": "India Tools · Everyday, made easier.",
+  "short_name": "India Tools",
+  "description": "Free everyday calendars, calculators and useful tools for India.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f3f6fb",
+  "theme_color": "#245bc2",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
