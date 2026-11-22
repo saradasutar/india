@@ -24,13 +24,16 @@ Core calculations and mocked backend security flows are checked locally; source 
 
 To roll back a frontend release, revert its GitHub commit; keep the private backend and `india-config.json` as they were. No backend migration is required for v0.8.
 
-## v1.1 public release additions
+## v1.2 public release additions
 
 - Refined responsive card layouts, category colour treatments, focus visibility and dynamic tool-count display.
 - Added a web app manifest and service worker. After a successful first online visit, the public dashboard shell and its local calculator assets can be served offline; dynamic admin publishing, calendar feeds and remote resources still require a connection.
 - Added a sitemap and crawler rules. The admin page is excluded from indexing.
+- Added a Government resources directory linking to official Department of Expenditure, DoPPW, DoPT, EPFO, Income Tax and NPS Trust portals.
+- Added a configurable monthly salary estimator. DA/HRA and other allowances are user-entered rather than hardcoded, so estimates can be adapted to the applicable order and posting.
+- Added an indicative basic pension estimator using 50% of the higher of entered emoluments or average emoluments, subject to at least 10 completed years of qualifying service. It is not an official sanction calculation and does not model special cases, limits, commutation or NPS/UPS.
 - The public site remains an independent personal project, not an official Government of India service.
 
 ## Release checks still required
 
-GitHub source commits do not prove the Pages deployment or browser rendering has completed. Verify the live public URL on a phone and desktop, test install/offline behaviour after one online visit, and confirm all calculator flows. The backend URL remains blank in `india-config.json`; email OTP, publishing, visitor metrics and calendar management are therefore not active until the private Apps Script deployment is connected and tested. No official salary, pension or pay-fixation calculator has been published in this release; those require rule-by-rule validation against current government orders before being offered as authoritative tools.
+GitHub source commits do not prove the Pages deployment or browser rendering has completed. Verify the live public URL on a phone and desktop, test install/offline behaviour after one online visit, and confirm all calculator flows. The backend URL remains blank in `india-config.json`; email OTP, publishing, visitor metrics and calendar management are therefore not active until the private Apps Script deployment is connected and tested. The salary and pension estimators are expressly indicative; they are not authoritative payroll, pension sanction, pay-fixation or retirement-benefit determinations. Do not use them in place of current Government orders, the applicable service rules, or the department's calculation.
