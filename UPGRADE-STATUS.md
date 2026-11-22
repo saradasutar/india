@@ -71,3 +71,13 @@ Connect the private Apps Script `/exec` URL in `india-config.json`, then test em
 - Dashboard JavaScript and service-worker syntax compile successfully.
 - Restricted holiday data contains 32 date entries for 2026 and 32 for 2027; entries sharing a date are grouped under one calendar date.
 - RH toggle, local shortlist, print controls, and Bengaluru-specific applicability disclaimer are present in the public HTML/JS.
+
+
+## v1.9 Bengaluru jurisdiction-specific holiday sources
+
+- Added Bengaluru CGEWCC-linked 2026 closed holidays (Makara Sankranti, Ugadi, Ganesh Chaturthi) based on the ICAR-NIVEDI office order.
+- Added 35 Bengaluru 2026 restricted-holiday dates from the ICAR-NIVEDI office order issued in pursuance of the Karnataka CGEWCC letter.
+- Updated Bengaluru Id-ul-Zuha (Bakrid) closed-holiday date to 28 May 2026 following the CGEWCC Karnataka circular dated 20 May 2026.
+- Added 19 Karnataka State restricted-holiday dates for 2027 as a separately labelled State Government reference, not a Central Government office entitlement.
+- Separated Bengaluru Central Government, Karnataka State, and Delhi DoPT reference toggles; only the Bengaluru RH toggle is enabled by default.
+- Added source links and refreshed PWA cache to v1.9.
