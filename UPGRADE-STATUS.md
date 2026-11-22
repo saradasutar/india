@@ -5,7 +5,7 @@
 ## v0.8 public frontend
 
 - One design system replaces accumulated inline style overrides. Responsive single left navigation, mobile bottom navigation, calendar rail, consistent SVG icons, dark mode, compact welcome, improved empty states, and SVG favicon.
-- Ten local tools, including seven added in this release: age, date arithmetic, units, percentage change, text studio, number formatting, and countdown.
+- Fifteen local tools: calendar, date and number calculators, text studio, unit conversion, GST, EMI, simple interest, salary estimation and indicative pension estimation.
 - Search terms, categories, favourites, recent tools, deep links, slash shortcut, example/clear/copy controls and browser-data reset.
 - Government calendar year/jurisdiction filters and Google Calendar help; raw iCal URLs are copyable for desktop subscription. Holiday data is still supplied only by the owner from verified sources.
 - Admin indicates unpublished edits, warns before leaving, and avoids a publish while a calendar editor is open.
