@@ -1,6 +1,6 @@
 'use strict';
-const CACHE_NAME='india-tools-v1.7';
-const APP_SHELL=['./','./index.html','./dashboard.css?v=1.7','./dashboard.js?v=1.7','./tool-core.js?v=0.8','./favicon.svg','./manifest.webmanifest','./CENTRAL-GOVT-CALCULATOR-NOTES.md'];
+const CACHE_NAME='india-tools-v1.8';
+const APP_SHELL=['./','./index.html','./dashboard.css?v=1.8','./dashboard.js?v=1.8','./tool-core.js?v=0.8','./favicon.svg','./manifest.webmanifest','./CENTRAL-GOVT-CALCULATOR-NOTES.md'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('india-tools-')&&key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
