@@ -17,3 +17,12 @@
 ## Next gate
 
 Connect the private Apps Script `/exec` URL in `india-config.json`, then test email OTP, public PDF links, subscription links, notice updates, visit counts and signed-out access. Test phone/tablet/desktop layout in a working browser. Avoid treating a PDF as a ready-made set of holiday events.
+
+
+## v1.3 implementation update
+
+- Published 15 browser-side tools, including configurable monthly salary estimation and an explicitly indicative basic pension estimator.
+- Added official Government resource links and current-source reminders; rates are user-entered rather than silently assumed.
+- Added PWA manifest, offline shell caching, sitemap and robots rules.
+- Fixed a malformed separator between existing tool definitions that prevented the public dashboard script from parsing; `dashboard.js` and `service-worker.js` now pass JavaScript syntax compilation checks.
+- Live GitHub Pages rendering, mobile interaction, install prompt behaviour and offline acceptance still require browser testing after Pages deployment. The private Apps Script backend remains unconfigured in the public repository.
