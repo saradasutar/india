@@ -1,6 +1,6 @@
 # India Tools
 
-An independent public dashboard by Sarada Sutar. Version 1.4 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
+An independent public dashboard by Sarada Sutar. Version 1.5 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
 
 ## Public tools
 
