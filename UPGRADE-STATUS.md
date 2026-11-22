@@ -38,3 +38,10 @@ Connect the private Apps Script `/exec` URL in `india-config.json`, then test em
 - Updated basic pension estimate to apply Rule 44's ₹9,000 minimum and ₹1,25,000 maximum.
 - Added `CENTRAL-GOVT-CALCULATOR-NOTES.md` with formulas, source links and limitations.
 - Source checks: dashboard and service-worker JavaScript syntax compile; 21 calculator definitions are present. Browser-level acceptance and live Pages deployment are still unverified.
+
+
+## v1.5 validation refinement
+
+- Added an explicit check that the selected promotion/MACP destination level is higher than the current level.
+- Added a public link to the calculator methodology and official-source notes from the dashboard.
+- Updated the offline shell to cache the methodology notes and v1.5 JavaScript asset.
