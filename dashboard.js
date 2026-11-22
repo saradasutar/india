@@ -96,6 +96,47 @@ async function copyText(text,statusEl,success){try{await navigator.clipboard.wri
 $('copyResult').onclick=async()=>{if(activeTool.id==='text'){try{await navigator.clipboard.writeText($('input-text').value);$('copyStatus').textContent='Text copied.';}catch{$('input-text').focus();$('input-text').select();$('copyStatus').textContent='Select and copy the highlighted text.';}}else copyText($('toolResult').textContent,$('copyStatus'),'Result copied.');};
 $('shareTool').onclick=()=>{const u=new URL(location.href);u.searchParams.set('tool',activeTool.id);u.hash='tools';copyText(u.href,$('copyStatus'),'Tool link copied.');};
 document.querySelectorAll('dialog .close').forEach(b=>b.onclick=()=>b.closest('dialog').close());$('toolDialog').addEventListener('close',()=>updateToolURL(null));
+
+// Compact DoPT holiday calendar for Central Government offices outside Delhi/New Delhi.
+// The Bengaluru/Karnataka local three optional holidays are intentionally not inferred.
+const doptHolidays=[
+ {date:'2026-01-26',name:'Republic Day'},{date:'2026-03-21',name:'Id-ul-Fitr',moon:true},{date:'2026-03-31',name:'Mahavir Jayanti'},{date:'2026-04-03',name:'Good Friday'},{date:'2026-05-01',name:'Buddha Purnima'},{date:'2026-05-27',name:'Id-ul-Zuha (Bakrid)',moon:true},{date:'2026-06-26',name:'Muharram',moon:true},{date:'2026-08-15',name:'Independence Day'},{date:'2026-08-26',name:'Milad-un-Nabi / Id-e-Milad',moon:true},{date:'2026-10-02',name:'Mahatma Gandhi’s Birthday'},{date:'2026-10-20',name:'Dussehra (Vijaya Dashami)'},{date:'2026-11-08',name:'Diwali (Deepavali)'},{date:'2026-11-24',name:'Guru Nanak’s Birthday'},{date:'2026-12-25',name:'Christmas Day'},
+ {date:'2027-01-26',name:'Republic Day'},{date:'2027-03-10',name:'Id-ul-Fitr',moon:true},{date:'2027-03-26',name:'Good Friday'},{date:'2027-04-19',name:'Mahavir Jayanti'},{date:'2027-05-17',name:'Id-ul-Zuha (Bakrid)',moon:true},{date:'2027-05-20',name:'Buddha Purnima'},{date:'2027-06-16',name:'Muharram',moon:true},{date:'2027-08-15',name:'Independence Day'},{date:'2027-08-15',name:'Milad-un-Nabi / Id-e-Milad',moon:true},{date:'2027-10-02',name:'Mahatma Gandhi’s Birthday'},{date:'2027-10-09',name:'Dussehra (Vijaya Dashami)'},{date:'2027-10-29',name:'Diwali (Deepavali)'},{date:'2027-11-14',name:'Guru Nanak’s Birthday'},{date:'2027-12-25',name:'Christmas Day'}
+];
+let doptYear=new Date().getFullYear(),doptMonth=new Date().getMonth(),doptSelected='';
+if(doptYear<2026||doptYear>2027){doptYear=2026;doptMonth=0;}
+const doptDateKey=(y,m,d)=>y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+const doptByDate=date=>doptHolidays.filter(h=>h.date===date);
+function renderDoptCalendar(){
+ const first=new Date(doptYear,doptMonth,1),days=new Date(doptYear,doptMonth+1,0).getDate(),grid=$('doptMonthGrid');
+ $('doptMonthLabel').textContent=first.toLocaleDateString('en-IN',{month:'long',year:'numeric'});
+ grid.replaceChildren();
+ for(const [short,long] of [['Su','Sunday'],['Mo','Monday'],['Tu','Tuesday'],['We','Wednesday'],['Th','Thursday'],['Fr','Friday'],['Sa','Saturday']]){const w=document.createElement('span');w.className='dopt-weekday';w.textContent=short;w.setAttribute('aria-label',long);grid.append(w);}
+ for(let i=0;i<first.getDay();i++){const blank=document.createElement('span');blank.className='dopt-day-blank';blank.setAttribute('aria-hidden','true');grid.append(blank);}
+ for(let day=1;day<=days;day++){
+  const key=doptDateKey(doptYear,doptMonth,day),date=new Date(doptYear,doptMonth,day),events=doptByDate(key),b=document.createElement('button');
+  b.type='button';b.className='dopt-day';b.textContent=day;
+  if(date.getDay()===0||date.getDay()===6)b.classList.add('is-weekend');
+  if(events.length)b.classList.add('is-holiday');
+  if(key===today)b.classList.add('is-today');
+  if(key===doptSelected)b.classList.add('is-selected');
+  b.setAttribute('aria-label',date.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+(events.length?': '+events.map(e=>e.name).join(', '):''));
+  if(events.length)b.title=events.map(e=>e.name).join(' · ');
+  b.onclick=()=>{doptSelected=key;renderDoptCalendar();showDoptDate(key);};
+  grid.append(b);
+ }
+ const monthEvents=doptHolidays.filter(h=>h.date.startsWith(doptYear+'-'+String(doptMonth+1).padStart(2,'0')));
+ const list=$('doptHolidayList');list.replaceChildren();
+ if(!monthEvents.length){const p=document.createElement('p');p.className='dopt-no-holidays';p.textContent='No DoPT compulsory holidays listed for this month.';list.append(p);}
+ for(const h of monthEvents){const item=document.createElement('button');item.type='button';item.className='dopt-holiday-item';item.onclick=()=>{doptSelected=h.date;renderDoptCalendar();showDoptDate(h.date);};const date=new Date(h.date+'T00:00:00');const day=document.createElement('span');day.className='dopt-holiday-date';day.textContent=date.toLocaleDateString('en-IN',{day:'numeric',month:'short'});const name=document.createElement('span');name.className='dopt-holiday-name';name.textContent=h.name+(h.moon?' *':'');item.append(day,name);list.append(item);}
+ $('doptPrev').disabled=doptYear===2026&&doptMonth===0;$('doptNext').disabled=doptYear===2027&&doptMonth===11;
+ if(doptSelected&&doptSelected.startsWith(doptYear+'-'+String(doptMonth+1).padStart(2,'0')))showDoptDate(doptSelected);else $('doptSelectedDate').textContent='Select a date to see its details.';
+}
+function showDoptDate(key){const events=doptByDate(key),d=new Date(key+'T00:00:00');$('doptSelectedDate').textContent=d.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' — '+(events.length?events.map(e=>e.name).join(', ')+(events.some(e=>e.moon)?' (subject to moon-sighting update)':''):'No DoPT compulsory holiday listed.');}
+$('doptPrev').onclick=()=>{if(doptYear===2026&&doptMonth===0)return;const d=new Date(doptYear,doptMonth-1,1);doptYear=d.getFullYear();doptMonth=d.getMonth();doptSelected='';renderDoptCalendar();};
+$('doptNext').onclick=()=>{if(doptYear===2027&&doptMonth===11)return;const d=new Date(doptYear,doptMonth+1,1);doptYear=d.getFullYear();doptMonth=d.getMonth();doptSelected='';renderDoptCalendar();};
+renderDoptCalendar();
+
 // Date-only calendar rendering. Local dates are used for the current-day marker.
 let year=new Date().getFullYear(),month=new Date().getMonth();
 for(let m=0;m<12;m++){const o=document.createElement('option');o.value=m;o.textContent=new Date(2026,m,1).toLocaleDateString('en-IN',{month:'long'});$('jumpMonth').append(o);}
