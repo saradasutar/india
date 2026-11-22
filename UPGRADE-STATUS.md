@@ -45,3 +45,12 @@ Connect the private Apps Script `/exec` URL in `india-config.json`, then test em
 - Added an explicit check that the selected promotion/MACP destination level is higher than the current level.
 - Added a public link to the calculator methodology and official-source notes from the dashboard.
 - Updated the offline shell to cache the methodology notes and v1.5 JavaScript asset.
+
+
+## v1.6 DoPT mainboard monthly calendar
+
+- Added a compact monthly calendar to the main dashboard, with holiday date markers, month navigation, and a clickable monthly holiday agenda.
+- Added 2026 and 2027 DoPT compulsory holiday dates for Central Government offices outside Delhi/New Delhi.
+- Clearly excludes the three State CGEWCC-selected holidays and local restricted holidays until the applicable Karnataka/Bengaluru notification is verified; flags moon-dependent dates as subject to revision.
+- Added links to the 2026 and 2027 DoPT Office Memoranda and refreshed the PWA cache.
+- JavaScript syntax, calendar data and deployment asset versions are checked in source. Live browser/mobile appearance and Pages deployment still need acceptance testing.
