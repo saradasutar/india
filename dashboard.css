@@ -105,3 +105,16 @@ button:disabled{transform:none}
 @media(max-width:390px){.tools{grid-template-columns:1fr}.card{min-height:150px;display:grid;grid-template-columns:42px minmax(0,1fr);gap:0 12px;padding:15px}.card-top{display:contents}.tool-icon{grid-column:1;grid-row:1 / span 3}.favorite{position:absolute;right:8px;top:8px}.card h3,.card p,.tool-open{grid-column:2}.card h3{padding-right:28px}.card p{font-size:.78rem}.filters{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(prefers-color-scheme:dark){body:not(.light){color-scheme:dark}}
 @media(prefers-reduced-motion:reduce){.card:hover{transform:none}}
+
+
+/* v1.2 — public resources and government-tool clarity */
+.official-resources{padding:26px 0;border-top:1px solid var(--line)}
+.official-resources .sectionhead{margin-bottom:18px}
+.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.resource-link{display:flex;flex-direction:column;gap:6px;min-height:105px;padding:17px;background:var(--surface);border:1px solid var(--line);border-radius:15px;text-decoration:none;box-shadow:0 4px 14px rgba(25,51,87,.035);transition:transform .18s,box-shadow .18s,border-color .18s}
+.resource-link:hover{transform:translateY(-2px);border-color:#9eb7dc;box-shadow:var(--shadow)}
+.resource-link strong{font-size:.875rem;color:var(--ink);line-height:1.35}
+.resource-link span{font-size:.75rem;color:var(--muted);line-height:1.45}
+.dark .resource-link{background:#1b2b42;border-color:#3a506d}
+@media(max-width:1000px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){.resource-grid{grid-template-columns:1fr}.resource-link{min-height:85px}}
