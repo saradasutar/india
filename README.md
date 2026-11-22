@@ -1,6 +1,6 @@
 # India Tools
 
-An independent public dashboard by Sarada Sutar. Version 1.6 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
+An independent public dashboard by Sarada Sutar. Version 1.7 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
 
 ## Public tools
 
@@ -49,3 +49,16 @@ See [CENTRAL-GOVT-CALCULATOR-NOTES.md](CENTRAL-GOVT-CALCULATOR-NOTES.md) for the
 - 2026 DoPT Office Memorandum, F.No.12/2/2023-JCA dated 3 July 2025: [PDF copy](https://d1jmc0u14z2tmp.cloudfront.net/uploads/media/List-of-Holiday-2026-DoPT-0693911b85f7cc3-00668785.pdf). The 14 compulsory holidays for offices outside Delhi/New Delhi are used in the mainboard calendar.
 - 2027 DoPT Office Memorandum, F.No.12/2/2023-JCA dated 16 July 2026: [PDF copy of the memorandum](https://dtf.in/wp-content/files/DoPT_O.M._dated_16.07.2026__Holidays_to_be_observed_in_Central_Government_Offices_during_the_year_2027_-_reg...PDF). The 14 compulsory holidays for offices outside Delhi/New Delhi are used in the mainboard calendar.
 - The DoPT memorandum provides for three additional holidays selected by the Central Government Employees Welfare Coordination Committee in each State. Those dates must be added only after the applicable Karnataka/Bengaluru list is confirmed. Moon-dependent dates may be revised at short notice.
+
+ 
+## Restricted holiday calendar — v1.7
+
+- The mainboard now has a separate toggle for restricted-holiday references. Amber markers and a monthly agenda distinguish RH references from compulsory holidays.
+- The 2026 and 2027 RH dates are transcribed from DoPT Annexure-II. Those Annexure-II lists are explicitly for Delhi/New Delhi offices only.
+- For Bengaluru/Karnataka offices, the State CGEWCC issues a separate RH list. The Delhi annexure must not be treated as the user's office entitlement. The nine unselected occasions from the 12 optional-holiday categories are also to be included in the outside-Delhi RH list.
+- Users can save dates to a browser-local personal RH shortlist. It does not submit leave, synchronise between devices, or determine entitlement.
+- A print action produces a calendar-and-agenda print layout. Islamic dates and local office amendments remain subject to official notifications.
+
+Sources:
+- 2026 DoPT OM, F.No.12/2/2023-JCA dated 03.07.2025: [PDF](https://d1jmc0u14z2tmp.cloudfront.net/uploads/media/List-of-Holiday-2026-DoPT-0693911b85f7cc3-00668785.pdf).
+- 2027 DoPT OM, F.No.12/2/2023-JCA dated 16.07.2026: [PDF](https://dtf.in/wp-content/files/DoPT_O.M._dated_16.07.2026__Holidays_to_be_observed_in_Central_Government_Offices_during_the_year_2027_-_reg...PDF).
