@@ -1,10 +1,10 @@
 # India Tools
 
-An independent public dashboard by Sarada Sutar. Version 1.3 has responsive navigation, a Gregorian calendar, a government calendar collection, 15 local tools, official government resource links and offline-ready PWA support.
+An independent public dashboard by Sarada Sutar. Version 1.4 has responsive navigation, a Gregorian calendar, a government calendar collection, 21 local tools, a Central Government employee toolkit, official government resource links and offline-ready PWA support.
 
 ## Public tools
 
-Monthly calendar, days between dates, percentage of an amount, age, add/subtract days, length/mass/temperature conversion, percentage change, text studio, Indian/international number formatting and days until a date. Search by name or common terms; filter by category; star favourites; revisit recent tools; press `/` to focus search; share `?tool=age` or `?month=2026-11`. Dark theme, larger text, stronger contrast, reduced motion and a compact welcome are browser preferences. Calculator inputs stay in the page; favourites, recent names and appearance settings are stored on that browser only.
+Monthly calendar, days between dates, percentage of an amount, age, add/subtract days, length/mass/temperature conversion, percentage change, text studio, Indian/international number formatting, countdown, GST, EMI, simple interest, salary, basic pension, 7th CPC promotion/MACP fixation, HRA, transport allowance, retirement gratuity, retirement leave encashment and pension commutation. Search by name or common terms; filter by category; star favourites; revisit recent tools; press `/` to focus search; share `?tool=age` or `?month=2026-11`. Dark theme, larger text, stronger contrast, reduced motion and a compact welcome are browser preferences. Calculator inputs stay in the page; favourites, recent names and appearance settings are stored on that browser only.
 
 The Gregorian month view has no government holiday overlays. No Odia/festival data is asserted until verified and published.
 
@@ -37,3 +37,8 @@ To roll back a frontend release, revert its GitHub commit; keep the private back
 ## Release checks still required
 
 GitHub source commits do not prove the Pages deployment or browser rendering has completed. Verify the live public URL on a phone and desktop, test install/offline behaviour after one online visit, and confirm all calculator flows. The backend URL remains blank in `india-config.json`; email OTP, publishing, visitor metrics and calendar management are therefore not active until the private Apps Script deployment is connected and tested. The salary and pension estimators are expressly indicative; they are not authoritative payroll, pension sanction, pay-fixation or retirement-benefit determinations. Do not use them in place of current Government orders, the applicable service rules, or the department's calculation.
+
+
+## Central Government employee calculators
+
+See [CENTRAL-GOVT-CALCULATOR-NOTES.md](CENTRAL-GOVT-CALCULATOR-NOTES.md) for the formula scope, official source links and limitations of the 7th CPC fixation, HRA, transport allowance, gratuity, leave encashment, pension and commutation estimators. The tools are indicative aids, not official determinations.
